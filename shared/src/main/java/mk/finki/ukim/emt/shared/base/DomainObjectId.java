@@ -1,0 +1,15 @@
+package mk.finki.ukim.emt.shared.base;
+
+import lombok.Getter;
+
+import javax.persistence.Embeddable;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
+
+@MappedSuperclass
+@Embeddable
+@Getter
+public class DomainObjectId implements Serializable {
+
+    private String id;
+}
