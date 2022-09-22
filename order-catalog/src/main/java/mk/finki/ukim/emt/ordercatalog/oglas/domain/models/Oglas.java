@@ -11,12 +11,22 @@ import javax.persistence.Table;
 @Table(name="oglas")
 public class Oglas extends AbstractEntity<OglasId>{
 
-    public Oglas(){}
-
-
     private Card playingCard;
 
     private Money money;
 
     private String dateCreated;
+    public Oglas()
+    {
+        super(OglasId.randomId(OglasId.class));
+    }
+
+    public static Oglas build(Card playingCard, Money money, String dateCreated)
+    {
+        Oglas o  = new Oglas();
+        o.playingCard = playingCard;
+        o.money = money;
+        o.dateCreated = dateCreated;
+        return o;
+    }
 }
